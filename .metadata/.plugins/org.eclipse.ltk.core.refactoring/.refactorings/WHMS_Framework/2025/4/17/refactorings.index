@@ -1,0 +1,8 @@
+1745164967687	Delete element
+1745219943748	Rename package 'com_taskMaster_objectRepo_Supervisor'
+1745219965312	Rename package 'com_taskMaster_AdminRepo'
+1745220003321	Rename package 'com_taskMaster_objectRepo_supervisor'
+1745220021540	Rename package 'com_taskMaster_objectRepo_taskBuddy'
+1745220704511	Rename type 'TaskBuddyLoginPage'
+1745313726705	Rename type 'TaskBuddyHomePage'
+1745313761181	Rename type 'SupervisorHomePage'

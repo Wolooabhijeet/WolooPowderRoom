@@ -1,0 +1,11 @@
+appium.server.url=http://127.0.0.1:4723/
+
+# Android
+android.deviceName=Pixel 8 pro
+android.platformVersion=16.0
+android.app.path=C:/Users/User/Downloads/Woloo shop/LooDiscovery Blogs Shop UAT (1).apk
+
+# iOS
+ios.deviceName=iPhone 14
+ios.platformVersion=16.0
+ios.app.path=/path/to/app.ipa

@@ -1,0 +1,7 @@
+platformName Android
+automationName UiAutomator2
+deviceName Galaxy A13
+appPackage com.woloo.smarthygiene
+appActivity com.woloo.smarthygiene.MainActivity
+app 
+

@@ -1,0 +1,11 @@
+appium.server.url=http://127.0.0.1:4723/
+
+# Android
+android.deviceName=Pixel 7 pro
+android.platformVersion=16.0
+android.app.path=C:/Users/User/Downloads/app-woloo-debug-june03.apk
+
+# iOS
+ios.deviceName=iPhone 14
+ios.platformVersion=16.0
+ios.app.path=/path/to/app.ipa

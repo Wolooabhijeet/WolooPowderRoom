@@ -1,0 +1,14 @@
+package com_powderRoom_LoginTest;
+import org.testng.annotations.Test;
+
+import Utilities.BaseClass;
+
+public class UserLoginTest extends BaseClass{
+	
+	@Test
+	public void welcomeScreenTest()
+	{
+		System.out.println("Done");
+	}
+
+}

@@ -1,0 +1,96 @@
+package Utilities;
+
+import java.util.Map;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
+
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
+
+public class GestureUtility {
+
+	AppiumDriver driver;
+
+    public GestureUtility(AppiumDriver driver) {
+        this.driver = driver;
+    }
+
+    public void clickByElement(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("mobile:clickGesture",
+                Map.of("elementId", ((RemoteWebElement) element).getId()));
+    }
+
+    public void clickByCoordinates(int x, int y) {
+        ((JavascriptExecutor) driver).executeScript("mobile:clickGesture", Map.of("x", x, "y", y));
+    }
+
+    public void longClickByElement(WebElement element, int time) {
+        ((JavascriptExecutor) driver).executeScript("mobile:longClickGesture",
+                Map.of("elementId", ((RemoteWebElement) element).getId(), "duration", time));
+    }
+
+    public void longClickByCoordinates(int x, int y, int time) {
+        ((JavascriptExecutor) driver).executeScript("mobile:longClickGesture",
+                Map.of("x", x, "y", y, "duration", time));
+    }
+
+    public void doubleClickByElement(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("mobile:doubleClickGesture",
+                Map.of("elementId", ((RemoteWebElement) element).getId()));
+    }
+
+    public void doubleClickByCoordinates(int x, int y) {
+        ((JavascriptExecutor) driver).executeScript("mobile:doubleClickGesture", Map.of("x", x, "y", y));
+    }
+
+    public void dragAndDrop(WebElement element, int x, int y) {
+        ((JavascriptExecutor) driver).executeScript("mobile:dragGesture",
+                Map.of("elementId", ((RemoteWebElement) element).getId(), "endX", x, "endY", y));
+    }
+
+    public void zoomIn(WebElement element, double percent) {
+        ((JavascriptExecutor) driver).executeScript("mobile:pinchOpenGesture",
+                Map.of("elementId", ((RemoteWebElement) element).getId(), "percent", percent));
+    }
+
+    public void zoomOut(WebElement element, double percent) {
+        ((JavascriptExecutor) driver).executeScript("mobile:pinchCloseGesture",
+                Map.of("elementId", ((RemoteWebElement) element).getId(), "percent", percent));
+    }
+
+    public void swipeByCoordinates(int left, int top, int width, int height, String direction, double percent) {
+        ((JavascriptExecutor) driver).executeScript("mobile:swipeGesture",
+                Map.of("left", left, "top", top, "width", width, "height", height, "direction", direction, "percent", percent));
+    }
+
+    public void swipeByElement(WebElement element, String direction, double percent) {
+        ((JavascriptExecutor) driver).executeScript("mobile:swipeGesture",
+                Map.of("elementId", ((RemoteWebElement) element).getId(), "direction", direction, "percent", percent));
+    }
+
+    public void scrollOnElement(WebElement element, String direction) {
+        ((JavascriptExecutor) driver).executeScript("mobile:swipeGesture",
+                Map.of("elementId", ((RemoteWebElement) element).getId(), "direction", direction, "percent", 1));
+    }
+
+    public void dragScrollOnElement(WebElement element, int startXOffset, int startYOffset, int endXOffset,
+                                     int endYOffset, int durationMs) {
+        ((JavascriptExecutor) driver).executeScript("mobile:dragGesture",
+                Map.of("elementId", ((RemoteWebElement) element).getId(), "startX", startXOffset, "startY", startYOffset,
+                        "endX", endXOffset, "endY", endYOffset, "duration", durationMs));
+    }
+
+    // Android-specific methods, guarded with try-catch
+    public WebElement scrollByText(String text) {
+        try {
+            return driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + text + "\"));"));
+        } catch (Exception e) {
+            System.err.println("scrollByText works only on Android with UIAutomator: " + e.getMessage());
+            return null;
+        }
+    }
+
+}
