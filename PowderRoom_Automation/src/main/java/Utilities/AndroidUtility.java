@@ -24,9 +24,10 @@ public class AndroidUtility implements MobileUtility{
     }
 
     @Override
-    public void isAppInstalled(String appPackage) {
+    public boolean isAppInstalled(String appPackage) {
         boolean result = driver.isAppInstalled(appPackage);
         System.out.println("Is App Installed: " + result);
+        return result;
     }
 
     @Override

@@ -1,0 +1,31 @@
+package Utilities;
+
+import java.time.Duration;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.appium.java_client.AppiumDriver;
+
+public class GenericUtility {
+	public String getToastMessage(AppiumDriver driver, String expectedText, int timeoutInSeconds) {
+	    String toastText = "";
+
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+	    try {
+	        if (((Object) driver).getPlatformName().equalsIgnoreCase("Android")) {
+	            // Toast is a transient element in Android
+	            By toastLocator = By.xpath("//android.widget.Toast[1]");
+	            toastText = wait.until(ExpectedConditions.presenceOfElementLocated(toastLocator)).getText();
+	        } else if (driver.getPlatformName().equalsIgnoreCase("iOS")) {
+	            // Toasts are usually custom static text views in iOS
+	            By iOSToastLocator = By.xpath("//XCUIElementTypeStaticText[contains(@name, '" + expectedText + "')]");
+	            toastText = wait.until(ExpectedConditions.presenceOfElementLocated(iOSToastLocator)).getText();
+	        }
+	    } catch (Exception e) {
+	        System.out.println("Toast message not found: " + e.getMessage());
+	    }
+
+	    return toastText;
+	}
+
+}

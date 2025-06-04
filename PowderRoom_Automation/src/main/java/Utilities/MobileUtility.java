@@ -4,7 +4,7 @@ public interface MobileUtility {
 	
 	void installApp(String path);
 
-    void isAppInstalled(String appId);
+    boolean isAppInstalled(String appId);
 
     void deleteApp(String appId);
 

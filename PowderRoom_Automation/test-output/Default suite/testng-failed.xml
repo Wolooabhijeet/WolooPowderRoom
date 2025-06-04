@@ -6,9 +6,11 @@
       <class name="com_powderRoom_LoginTest.UserLoginTest">
         <methods>
           <include name="stopServer"/>
+          <include name="inValidOTPVaildationTest"/>
           <include name="loadConfig"/>
-          <include name="verifyLoginDisplayTest"/>
+          <include name="closeApp"/>
           <include name="setup"/>
+          <include name="launchApp"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com_powderRoom_LoginTest.UserLoginTest -->

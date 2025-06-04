@@ -1,0 +1,130 @@
+package com_powderRoom_LoginTest;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import ObjectRepo.LoginPage;
+import ObjectRepo.MobileNoErrorPopup;
+import ObjectRepo.OTPPage;
+import ObjectRepo.WelcomePage;
+import Utilities.BaseClass;
+import Utilities.ListenerImpUtility;
+import io.appium.java_client.AppiumBy;
+
+@Listeners(ListenerImpUtility.class)
+public class UserLoginTest extends BaseClass {
+
+	@Test
+	public void welcomeScreenTest() {
+		WelcomePage welcomePage = new WelcomePage(driver);
+
+		Assert.assertEquals(true, welcomePage.getWolooText().isDisplayed());
+		Assert.assertEquals(true, welcomePage.getWolooLogo().isDisplayed());
+		Assert.assertEquals(true, welcomePage.getNextButton().isDisplayed());
+	}
+
+	@Test
+	public void verifyLoginScreenDisplayTest() {
+		WelcomePage welcomePage = new WelcomePage(driver);
+		welcomePage.getNextButton().click();
+
+		LoginPage loginPage = new LoginPage(driver);
+		Assert.assertEquals(true, loginPage.getWolooLogo().isDisplayed());
+		Assert.assertEquals(true, loginPage.getMobileNumTextfield().isDisplayed());
+		Assert.assertEquals(true, loginPage.getOtpButton().isDisplayed());
+		Assert.assertEquals(true, loginPage.getTermsLink().isDisplayed());
+	}
+
+	@Test
+	public void verifyOTPScreenDisplayTest() {
+		WelcomePage welcomePage = new WelcomePage(driver);
+		welcomePage.getNextButton().click();
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.getMobileNumTextfield().sendKeys("9626409660");
+		loginPage.getOtpButton().click();
+
+		OTPPage otpPage = new OTPPage(driver);
+		Assert.assertEquals(true, otpPage.getWolooLogo().isDisplayed());
+		Assert.assertEquals(true, otpPage.getOtpTextfield1().isDisplayed());
+		Assert.assertEquals(true, otpPage.getOtpTextfield2().isDisplayed());
+		Assert.assertEquals(true, otpPage.getOtpTextfield3().isDisplayed());
+		Assert.assertEquals(true, otpPage.getOtpTextfield4().isDisplayed());
+		Assert.assertEquals(true, otpPage.getResentOtpBtn().isDisplayed());
+		Assert.assertEquals(true, otpPage.getSubmitButton().isDisplayed());
+
+	}
+
+	@Test
+	public void emptyMobileNoValidationTest() {
+		WelcomePage welcomePage = new WelcomePage(driver);
+		welcomePage.getNextButton().click();
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.getMobileNumTextfield().sendKeys("");
+		loginPage.getOtpButton().click();
+
+		Assert.assertEquals(true, loginPage.getMobileNumTextfield().isDisplayed());
+
+	}
+
+	@Test
+	public void invalidMobileNoValidationTest() {
+		WelcomePage welcomePage = new WelcomePage(driver);
+		welcomePage.getNextButton().click();
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.getMobileNumTextfield().sendKeys("xyz1234567");
+		loginPage.getOtpButton().click();
+
+		MobileNoErrorPopup mobileNoErrorPopup = new MobileNoErrorPopup(driver);
+
+		Assert.assertEquals(true, mobileNoErrorPopup.getErrorMsgText().isDisplayed());
+		Assert.assertEquals(true, mobileNoErrorPopup.getCloseButton().isDisplayed());
+	}
+
+	@Test
+	public void emptyOTPVaildationTest() {
+		WelcomePage welcomePage = new WelcomePage(driver);
+		welcomePage.getNextButton().click();
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.getMobileNumTextfield().sendKeys("9626409660");
+		loginPage.getOtpButton().click();
+
+		OTPPage otpPage = new OTPPage(driver);
+
+		otpPage.getSubmitButton().click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement toastMessage = wait.until(
+		    ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//android.widget.Toast"))
+		);
+		System.out.println("Toast Message: " + toastMessage.getText());
+
+	}
+	
+	@Test
+	public void inValidOTPVaildationTest() {
+		WelcomePage welcomePage = new WelcomePage(driver);
+		welcomePage.getNextButton().click();
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.getMobileNumTextfield().sendKeys("9626409660");
+		loginPage.getOtpButton().click();
+
+		OTPPage otpPage = new OTPPage(driver);
+		otpPage.getOtpTextfield1().sendKeys("1");
+		otpPage.getOtpTextfield2().sendKeys("2");
+		otpPage.getOtpTextfield3().sendKeys("3");
+		otpPage.getOtpTextfield3().sendKeys("5");
+		otpPage.getSubmitButton().click();
+
+	}
+
+}

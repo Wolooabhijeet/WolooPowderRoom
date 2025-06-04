@@ -1,0 +1,38 @@
+package com_powderRoom_LoginTest;
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import ObjectRepo.LoginPage;
+import ObjectRepo.WelcomePage;
+import Utilities.BaseClass;
+import Utilities.ListenerImpUtility;
+@Listeners(ListenerImpUtility.class)
+public class UserLoginTest extends BaseClass{
+	
+	@Test
+	public void welcomeScreenTest()
+	{
+		WelcomePage welcomePage=new WelcomePage(driver);
+		
+		
+		Assert.assertEquals(true, welcomePage.getWolooText().isDisplayed());
+		Assert.assertEquals(true, welcomePage.getWolooLogo().isDisplayed());
+		Assert.assertEquals(true, welcomePage.getNextButton().isDisplayed());
+	}
+
+	@Test
+	public void verifyLoginDisplayTest()
+	{
+		WelcomePage welcomePage=new WelcomePage(driver);
+		welcomePage.getNextButton().click();
+		
+		LoginPage loginPage=new LoginPage(driver);
+		Assert.assertEquals(true, loginPage.getWolooLogo().isDisplayed());
+		Assert.assertEquals(true, loginPage.getMobileNumTextfield().isDisplayed());
+		Assert.assertEquals(true, loginPage.getOtpButton().isDisplayed());
+		Assert.assertEquals(false, loginPage.getTermsLink().isDisplayed());
+	}
+	
+	
+}

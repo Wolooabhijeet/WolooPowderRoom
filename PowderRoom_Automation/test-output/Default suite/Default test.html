@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>7/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jun 04 13:54:01 IST 2025</td>
+<td>Started on:</td><td>Wed Jun 04 23:04:34 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>20 seconds (20118 ms)</td>
+<tr><td>Total time:</td><td>110 seconds (110880 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,16 +76,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com_powderRoom_LoginTest.UserLoginTest.verifyLoginDisplayTest()'><b>verifyLoginDisplayTest</b><br>Test class: com_powderRoom_LoginTest.UserLoginTest</td>
-<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+<td title='com_powderRoom_LoginTest.UserLoginTest.inValidOTPVaildationTest()'><b>inValidOTPVaildationTest</b><br>Test class: com_powderRoom_LoginTest.UserLoginTest</td>
+<td><div><pre>java.lang.AssertionError: expected [Please enter valid otp] but found [Something went wrong, try again]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
 	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:1067)
-	at org.testng.Assert.assertEquals(Assert.java:1031)
-	at org.testng.Assert.assertEquals(Assert.java:1077)
-	at com_powderRoom_LoginTest.UserLoginTest.verifyLoginDisplayTest(UserLoginTest.java:34)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at com_powderRoom_LoginTest.UserLoginTest.inValidOTPVaildationTest(UserLoginTest.java:135)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -112,16 +111,15 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1412655478", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1412655478'><pre>java.lang.AssertionError: expected [true] but found [false]
+</pre></div><a href='#' onClick='toggleBox("stack-trace1982652230", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1982652230'><pre>java.lang.AssertionError: expected [Please enter valid otp] but found [Something went wrong, try again]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
 	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:1067)
-	at org.testng.Assert.assertEquals(Assert.java:1031)
-	at org.testng.Assert.assertEquals(Assert.java:1077)
-	at com_powderRoom_LoginTest.UserLoginTest.verifyLoginDisplayTest(UserLoginTest.java:34)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at com_powderRoom_LoginTest.UserLoginTest.inValidOTPVaildationTest(UserLoginTest.java:135)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -149,8 +147,52 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>3</td>
-<td>com_powderRoom_LoginTest.UserLoginTest@21282ed8</td></tr>
+<td>14</td>
+<td>com_powderRoom_LoginTest.UserLoginTest@67f639d3</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com_powderRoom_LoginTest.UserLoginTest.welcomeScreenTest()'><b>welcomeScreenTest</b><br>Test class: com_powderRoom_LoginTest.UserLoginTest</td>
+<td></td>
+<td>1</td>
+<td>com_powderRoom_LoginTest.UserLoginTest@67f639d3</td></tr>
+<tr>
+<td title='com_powderRoom_LoginTest.UserLoginTest.validOTPVaildationTest()'><b>validOTPVaildationTest</b><br>Test class: com_powderRoom_LoginTest.UserLoginTest</td>
+<td></td>
+<td>20</td>
+<td>com_powderRoom_LoginTest.UserLoginTest@67f639d3</td></tr>
+<tr>
+<td title='com_powderRoom_LoginTest.UserLoginTest.verifyOTPScreenDisplayTest()'><b>verifyOTPScreenDisplayTest</b><br>Test class: com_powderRoom_LoginTest.UserLoginTest</td>
+<td></td>
+<td>11</td>
+<td>com_powderRoom_LoginTest.UserLoginTest@67f639d3</td></tr>
+<tr>
+<td title='com_powderRoom_LoginTest.UserLoginTest.emptyMobileNoValidationTest()'><b>emptyMobileNoValidationTest</b><br>Test class: com_powderRoom_LoginTest.UserLoginTest</td>
+<td></td>
+<td>9</td>
+<td>com_powderRoom_LoginTest.UserLoginTest@67f639d3</td></tr>
+<tr>
+<td title='com_powderRoom_LoginTest.UserLoginTest.invalidMobileNoValidationTest()'><b>invalidMobileNoValidationTest</b><br>Test class: com_powderRoom_LoginTest.UserLoginTest</td>
+<td></td>
+<td>10</td>
+<td>com_powderRoom_LoginTest.UserLoginTest@67f639d3</td></tr>
+<tr>
+<td title='com_powderRoom_LoginTest.UserLoginTest.verifyLoginScreenDisplayTest()'><b>verifyLoginScreenDisplayTest</b><br>Test class: com_powderRoom_LoginTest.UserLoginTest</td>
+<td></td>
+<td>8</td>
+<td>com_powderRoom_LoginTest.UserLoginTest@67f639d3</td></tr>
+<tr>
+<td title='com_powderRoom_LoginTest.UserLoginTest.emptyOTPVaildationTest()'><b>emptyOTPVaildationTest</b><br>Test class: com_powderRoom_LoginTest.UserLoginTest</td>
+<td></td>
+<td>12</td>
+<td>com_powderRoom_LoginTest.UserLoginTest@67f639d3</td></tr>
 </table><p>
 </body>
 </html>

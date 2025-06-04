@@ -22,9 +22,10 @@ public class IOSUtility implements MobileUtility {
     }
 
     @Override
-    public void isAppInstalled(String bundleId) {
+    public boolean isAppInstalled(String bundleId) {
         boolean result = driver.isAppInstalled(bundleId);
         System.out.println("Is App Installed: " + result);
+       return result;
     }
 
     @Override

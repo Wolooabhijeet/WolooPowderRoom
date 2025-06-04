@@ -2,13 +2,16 @@ package Utilities;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -81,11 +84,22 @@ public class BaseClass {
 		UtilityClassObject.setDriver(driver);
 		gestureUtility = new GestureUtility(driver);
 
-		if (!((InteractsWithApps) driver).isAppInstalled(fUtil.dataFromPropertiesFile("appPackage"))) {
+		if (!utility.isAppInstalled(fUtil.dataFromPropertiesFile("appPackage"))) {
 
-			((InteractsWithApps) driver).installApp(fUtil.dataFromPropertiesFile("app"));
+			utility.installApp(fUtil.dataFromPropertiesFile("app"));
 		}
 
+	}
+	@BeforeMethod
+	public void launchApp() throws IOException
+	{
+		utility.activateApp(fUtil.dataFromPropertiesFile("appPackage"));
+	}
+	
+	@AfterMethod
+	public void closeApp() throws IOException
+	{
+		utility.closeApp(fUtil.dataFromPropertiesFile("appPackage"));
 	}
 
 	@AfterClass

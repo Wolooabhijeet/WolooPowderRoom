@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\User\AppData\Local\Temp\testng-eclipse-1041230794\testng-customsuite.xml</span>
+                    <span>C:\Users\User\AppData\Local\Temp\testng-eclipse--72273333\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">8 methods, 1 failed,   7 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,10 +103,54 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com_powderRoom_LoginTest.UserLoginTest" class="method navigator-link" hash-for-method="verifyLoginDisplayTest">verifyLoginDisplayTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com_powderRoom_LoginTest.UserLoginTest" class="method navigator-link" hash-for-method="inValidOTPVaildationTest">inValidOTPVaildationTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com_powderRoom_LoginTest.UserLoginTest" class="method navigator-link" hash-for-method="emptyMobileNoValidationTest">emptyMobileNoValidationTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com_powderRoom_LoginTest.UserLoginTest" class="method navigator-link" hash-for-method="emptyOTPVaildationTest">emptyOTPVaildationTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com_powderRoom_LoginTest.UserLoginTest" class="method navigator-link" hash-for-method="invalidMobileNoValidationTest">invalidMobileNoValidationTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com_powderRoom_LoginTest.UserLoginTest" class="method navigator-link" hash-for-method="validOTPVaildationTest">validOTPVaildationTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com_powderRoom_LoginTest.UserLoginTest" class="method navigator-link" hash-for-method="verifyLoginScreenDisplayTest">verifyLoginScreenDisplayTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com_powderRoom_LoginTest.UserLoginTest" class="method navigator-link" hash-for-method="verifyOTPScreenDisplayTest">verifyOTPScreenDisplayTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com_powderRoom_LoginTest.UserLoginTest" class="method navigator-link" hash-for-method="welcomeScreenTest">welcomeScreenTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -126,18 +170,17 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyLoginDisplayTest">
-                  </a> <!-- verifyLoginDisplayTest -->
-                  <span class="method-name">verifyLoginDisplayTest</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+                  <a name="inValidOTPVaildationTest">
+                  </a> <!-- inValidOTPVaildationTest -->
+                  <span class="method-name">inValidOTPVaildationTest</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Please enter valid otp] but found [Something went wrong, try again]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
 	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:1067)
-	at org.testng.Assert.assertEquals(Assert.java:1031)
-	at org.testng.Assert.assertEquals(Assert.java:1077)
-	at com_powderRoom_LoginTest.UserLoginTest.verifyLoginDisplayTest(UserLoginTest.java:34)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at com_powderRoom_LoginTest.UserLoginTest.inValidOTPVaildationTest(UserLoginTest.java:135)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -170,10 +213,67 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com_powderRoom_LoginTest.UserLoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="emptyMobileNoValidationTest">
+                  </a> <!-- emptyMobileNoValidationTest -->
+                  <span class="method-name">emptyMobileNoValidationTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="emptyOTPVaildationTest">
+                  </a> <!-- emptyOTPVaildationTest -->
+                  <span class="method-name">emptyOTPVaildationTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="invalidMobileNoValidationTest">
+                  </a> <!-- invalidMobileNoValidationTest -->
+                  <span class="method-name">invalidMobileNoValidationTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validOTPVaildationTest">
+                  </a> <!-- validOTPVaildationTest -->
+                  <span class="method-name">validOTPVaildationTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoginScreenDisplayTest">
+                  </a> <!-- verifyLoginScreenDisplayTest -->
+                  <span class="method-name">verifyLoginScreenDisplayTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyOTPScreenDisplayTest">
+                  </a> <!-- verifyOTPScreenDisplayTest -->
+                  <span class="method-name">verifyOTPScreenDisplayTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="welcomeScreenTest">
+                  </a> <!-- welcomeScreenTest -->
+                  <span class="method-name">welcomeScreenTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\User\AppData\Local\Temp\testng-eclipse-1041230794\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\User\AppData\Local\Temp\testng-eclipse--72273333\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -182,11 +282,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com_powderRoom_LoginTest.UserLoginTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;verifyLoginDisplayTest&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com_powderRoom_LoginTest.UserLoginTest --&gt;
+      &lt;class name=&quot;com_powderRoom_LoginTest.UserLoginTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -226,16 +322,44 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(8);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyLoginDisplayTest')
+data.setCell(0, 1, 'validOTPVaildationTest')
 data.setCell(0, 2, 'com_powderRoom_LoginTest.UserLoginTest')
-data.setCell(0, 3, 3950);
+data.setCell(0, 3, 20230);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'inValidOTPVaildationTest')
+data.setCell(1, 2, 'com_powderRoom_LoginTest.UserLoginTest')
+data.setCell(1, 3, 14908);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'emptyOTPVaildationTest')
+data.setCell(2, 2, 'com_powderRoom_LoginTest.UserLoginTest')
+data.setCell(2, 3, 12677);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyOTPScreenDisplayTest')
+data.setCell(3, 2, 'com_powderRoom_LoginTest.UserLoginTest')
+data.setCell(3, 3, 11862);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'invalidMobileNoValidationTest')
+data.setCell(4, 2, 'com_powderRoom_LoginTest.UserLoginTest')
+data.setCell(4, 3, 10365);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'emptyMobileNoValidationTest')
+data.setCell(5, 2, 'com_powderRoom_LoginTest.UserLoginTest')
+data.setCell(5, 3, 9747);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'verifyLoginScreenDisplayTest')
+data.setCell(6, 2, 'com_powderRoom_LoginTest.UserLoginTest')
+data.setCell(6, 3, 8882);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'welcomeScreenTest')
+data.setCell(7, 2, 'com_powderRoom_LoginTest.UserLoginTest')
+data.setCell(7, 3, 1975);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -250,16 +374,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com_powderRoom_LoginTest.UserLoginTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">welcomeScreenTest</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -275,21 +392,113 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">setup(Android)</span>
-                <span class="method-start">2807 ms</span>
+                <span class="method-start">2521 ms</span>
               </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApp</span>
+                <span class="method-start">14619 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">welcomeScreenTest</span>
+                <span class="method-start">14917 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApp</span>
+                <span class="method-start">16898 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApp</span>
+                <span class="method-start">17474 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyLoginScreenDisplayTest</span>
+                <span class="method-start">17982 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApp</span>
+                <span class="method-start">26867 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApp</span>
+                <span class="method-start">27485 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyOTPScreenDisplayTest</span>
+                <span class="method-start">27926 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApp</span>
+                <span class="method-start">39789 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApp</span>
+                <span class="method-start">40274 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">emptyMobileNoValidationTest</span>
+                <span class="method-start">40592 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApp</span>
+                <span class="method-start">50340 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApp</span>
+                <span class="method-start">50831 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">invalidMobileNoValidationTest</span>
+                <span class="method-start">51145 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApp</span>
+                <span class="method-start">61512 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApp</span>
+                <span class="method-start">62078 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">emptyOTPVaildationTest</span>
+                <span class="method-start">62368 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApp</span>
+                <span class="method-start">75048 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApp</span>
+                <span class="method-start">75508 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">verifyLoginDisplayTest</span>
-                <span class="method-start">17674 ms</span>
+                <span class="method-name">inValidOTPVaildationTest</span>
+                <span class="method-start">75916 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApp</span>
+                <span class="method-start">91275 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">launchApp</span>
+                <span class="method-start">91609 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validOTPVaildationTest</span>
+                <span class="method-start">91771 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApp</span>
+                <span class="method-start">112004 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">22214 ms</span>
+                <span class="method-start">112493 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">stopServer</span>
-                <span class="method-start">22950 ms</span>
+                <span class="method-start">113420 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

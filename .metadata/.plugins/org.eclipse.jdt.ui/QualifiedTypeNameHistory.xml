@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com_taskMaster_taskBuddyRepo.TaskBuddyLanguagePopup"/>
-    <fullyQualifiedTypeName name="com_taskMaster_taskBuddyRepo.TaskBuddyOTPPage"/>
-    <fullyQualifiedTypeName name="com_taskMaster_taskBuddyRepo.TaskBuddyHomePage"/>
-    <fullyQualifiedTypeName name="io.appium.java_client.pagefactory.AndroidBy"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.support.ui.WebDriverWait"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.support.ui.ExpectedConditions"/>
-    <fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.CellType"/>
-    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.Keys"/>
     <fullyQualifiedTypeName name="com_taskMaster_adminRepo.AdminAssignTaskPage"/>
     <fullyQualifiedTypeName name="com_taskMaster_adminRepo.StartTimePage"/>
     <fullyQualifiedTypeName name="io.appium.java_client.android.nativekey.KeyEvent"/>
     <fullyQualifiedTypeName name="io.appium.java_client.android.nativekey.AndroidKey"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
     <fullyQualifiedTypeName name="java.awt.Dimension"/>
     <fullyQualifiedTypeName name="com_taskMaster_adminRepo.ScheduleTaskTimingsPage"/>
     <fullyQualifiedTypeName name="java.sql.Driver"/>
@@ -35,23 +25,18 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="Utilities.GestureUtility"/>
-    <fullyQualifiedTypeName name="java.lang.Thread"/>
     <fullyQualifiedTypeName name="Utilities.MobileUtility"/>
     <fullyQualifiedTypeName name="io.appium.java_client.ios.IOSDriver"/>
-    <fullyQualifiedTypeName name="java.time.Duration"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.ScreenOrientation"/>
     <fullyQualifiedTypeName name="java.util.Properties"/>
     <fullyQualifiedTypeName name="org.testng.annotations.Parameters"/>
     <fullyQualifiedTypeName name="org.testng.annotations.Optional"/>
     <fullyQualifiedTypeName name="io.appium.java_client.remote.options.BaseOptions"/>
     <fullyQualifiedTypeName name="io.appium.java_client.android.AndroidDriver"/>
-    <fullyQualifiedTypeName name="io.appium.java_client.AppiumBy"/>
-    <fullyQualifiedTypeName name="io.appium.java_client.AppiumDriver"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.support.PageFactory"/>
     <fullyQualifiedTypeName name="io.appium.java_client.pagefactory.AppiumFieldDecorator"/>
     <fullyQualifiedTypeName name="java.net.http.WebSocket"/>
     <fullyQualifiedTypeName name="org.testng.annotations.Test"/>
-    <fullyQualifiedTypeName name="Utilities.BaseClass"/>
     <fullyQualifiedTypeName name="org.testng.Assert"/>
     <fullyQualifiedTypeName name="ObjectRepo.WelcomePage"/>
     <fullyQualifiedTypeName name="ObjectRepo.LoginPage"/>
@@ -60,4 +45,19 @@
     <fullyQualifiedTypeName name="java.net.URL"/>
     <fullyQualifiedTypeName name="io.appium.java_client.pagefactory.AndroidFindBy"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
+    <fullyQualifiedTypeName name="ObjectRepo.OTPPage"/>
+    <fullyQualifiedTypeName name="ObjectRepo.MobileNoErrorPopup"/>
+    <fullyQualifiedTypeName name="java.time.Duration"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+    <fullyQualifiedTypeName name="io.appium.java_client.AppiumBy"/>
+    <fullyQualifiedTypeName name="java.lang.AssertionError"/>
+    <fullyQualifiedTypeName name="Utilities.GenericUtility"/>
+    <fullyQualifiedTypeName name="io.appium.java_client.AppiumDriver"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="ObjectRepo.ConsentPage"/>
+    <fullyQualifiedTypeName name="ObjectRepo.RegisterationPage"/>
+    <fullyQualifiedTypeName name="ObjectRepo.HomePage"/>
+    <fullyQualifiedTypeName name="Utilities.BaseClass"/>
+    <fullyQualifiedTypeName name="org.testng.annotations.BeforeMethod"/>
+    <fullyQualifiedTypeName name="org.testng.annotations.AfterMethod"/>
 </qualifiedTypeNameHistroy>

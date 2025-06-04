@@ -1,0 +1,17 @@
+package Utilities;
+
+import java.time.Duration;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.appium.java_client.AppiumDriver;
+
+public class GenericUtility {
+	public String getToastMessage(AppiumDriver driver, String expectedText, int timeoutInSeconds) {
+	    String toastText = "";
+
+	   
+	    return toastText;
+	}
+
+}
