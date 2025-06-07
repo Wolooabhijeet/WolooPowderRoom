@@ -1,0 +1,54 @@
+package ObjectRepo;
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+
+public class Sample2Page {
+	public AppiumDriver driver;
+
+	public Sample2Page(AppiumDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	}
+
+	// Blog container item ID
+	private String blogItemId = "//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[2]/android.view.View[2]"; // Replace
+																																			// with
+																																			// actual
+																																			// resource-id
+
+	public void performBlogActions() {
+		List<WebElement> blogs = driver.findElements(AppiumBy.xpath(blogItemId));
+
+		for (WebElement blog : blogs) {
+			try {
+				blog.findElement(AppiumBy.xpath("//android.widget.ImageView[@content-desc=\"Like\"]")).click(); // Like
+			} catch (Exception e) {
+				System.out.println("Error performing actions on blog: " + e.getMessage());
+			}
+		}
+
+//        // Try to click "Shop Now"
+//        List<MobileElement> shopNowButtons = driver.findElementsById("btn_shop"); // Replace with actual ID
+//        if (!shopNowButtons.isEmpty()) {
+//            scrollIntoView(shopNowButtons.get(0));
+//            shopNowButtons.get(0).click();
+//        }
+//    }
+//
+//    private void scrollIntoView(MobileElement element) {
+//        Map<String, Object> params = new HashMap<>();
+//        params.put("elementId", element.getId());
+//        params.put("direction", "down");
+//        params.put("percent", 1.0);
+//        ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", params);
+//    }
+
+	}
+}

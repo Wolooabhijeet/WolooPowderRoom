@@ -16,9 +16,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.InteractsWithApps;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.ios.IOSDriver;
@@ -31,7 +29,7 @@ public class BaseClass {
 
 	public AppiumDriverLocalService service;
 	public static AppiumDriver driver;
-	public static GestureUtility gestureUtility;
+	public static GestureUtility gUtil;
 	public Properties property;
 	public FileUtility fUtil = new FileUtility();
 	public ExcelUtility exUtil = new ExcelUtility();
@@ -39,15 +37,17 @@ public class BaseClass {
 
 	@BeforeSuite
 	public void loadConfig() throws Exception {
+		property = new Properties();
+		FileInputStream fis = new FileInputStream("./src/main/resources/config.properties");
+		property.load(fis);
+		String localserver = property.getProperty("appium.local.server");
 
-		File f = new File("C:\\Users\\User\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js");
+		File f = new File(localserver);
 		service = new AppiumServiceBuilder().withAppiumJS(f).withIPAddress("127.0.0.1").usingPort(4723)
 				.withTimeout(Duration.ofSeconds(300)).build();
 
 		service.start();
-		property = new Properties();
-		FileInputStream fis = new FileInputStream("./src/main/resources/config.properties");
-		property.load(fis);
+		
 	}
 
 	@Parameters("platformName")
@@ -82,7 +82,7 @@ public class BaseClass {
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		UtilityClassObject.setDriver(driver);
-		gestureUtility = new GestureUtility(driver);
+		gUtil = new GestureUtility(driver);
 
 		if (!utility.isAppInstalled(fUtil.dataFromPropertiesFile("appPackage"))) {
 

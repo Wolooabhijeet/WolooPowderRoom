@@ -1,0 +1,12 @@
+appium.server.url=http://127.0.0.1:4723/
+aapium.local.server=C:\\Users\\User\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js
+
+# Android
+android.deviceName=Galaxy A13
+android.platformVersion=14.0
+android.app.path=apps/app-woloo-debug-june03.apk
+
+# iOS
+ios.deviceName=iPhone 14
+ios.platformVersion=16.0
+ios.app.path=/path/to/app.ipa

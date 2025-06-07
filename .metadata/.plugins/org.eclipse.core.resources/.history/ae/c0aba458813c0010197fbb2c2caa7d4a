@@ -1,7 +1,0 @@
-platformName Android
-automationName UiAutomator2
-deviceName Galaxy A13
-appPackage 
-appActivity 
-app C:\Users\User\eclipse-workspace_PowderRoomApp\PowderRoom_Automation\src\main\resources\Apk\LooDiscovery Blogs Shop UAT.apk
-

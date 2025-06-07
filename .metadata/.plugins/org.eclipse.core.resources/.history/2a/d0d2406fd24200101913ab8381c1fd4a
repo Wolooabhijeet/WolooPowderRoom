@@ -1,0 +1,191 @@
+package com_powderRoom_LoginTest;
+
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import ObjectRepo.CommentTextAreaPopup;
+import ObjectRepo.CommentsPopup;
+import ObjectRepo.HomePage;
+import ObjectRepo.LoginPage;
+import ObjectRepo.OTPPage;
+import ObjectRepo.SelectedCategoryBlogs;
+import ObjectRepo.WelcomePage;
+import Utilities.BaseClass;
+import Utilities.ListenerImpUtility;
+import io.appium.java_client.AppiumBy;
+
+@Listeners(ListenerImpUtility.class)
+public class BlogsTest extends BaseClass {
+	@Test()
+	public void TC_Wl_01_validateScrollBlogsTest() throws InterruptedException {
+		WelcomePage welcomePage = new WelcomePage(driver);
+		welcomePage.getNextButton().click();
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.getMobileNumTextfield().sendKeys("9626409660");
+		loginPage.getOtpButton().click();
+
+		OTPPage otpPage = new OTPPage(driver);
+		otpPage.getOtpTextfield1().sendKeys("1");
+		otpPage.getOtpTextfield2().sendKeys("2");
+		otpPage.getOtpTextfield3().sendKeys("3");
+		otpPage.getOtpTextfield4().sendKeys("4");
+		otpPage.getSubmitButton().click();
+
+		HomePage homePage = new HomePage(driver);
+		Thread.sleep(2000);
+		Assert.assertEquals(true, homePage.getHomeTab().isDisplayed());
+		homePage.getHomeTab().click();
+		Assert.assertEquals(true, homePage.getBeautyTextview().isDisplayed());
+
+		WebElement element = driver.findElement(AppiumBy.xpath(
+				"//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[2]/android.view.View[2]"));
+
+		try {
+			gUtil.scrollOnElement(element, "up");
+			boolean actResult = driver.findElement(AppiumBy.xpath(
+					"//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[2]/android.view.View[2]"))
+					.isDisplayed();
+			Assert.assertEquals(true, actResult);
+
+			SelectedCategoryBlogs catBlogs = new SelectedCategoryBlogs(driver);
+
+			Assert.assertEquals(true, catBlogs.getBlogLogo().isDisplayed());
+			Assert.assertEquals(true, catBlogs.getWolooText().isDisplayed());
+			Assert.assertEquals(true, catBlogs.getShopnowButton().isDisplayed());
+			Assert.assertEquals(true, catBlogs.getLikeButton().isDisplayed());
+			Assert.assertEquals(true, catBlogs.getCommentsButton().isDisplayed());
+			Assert.assertEquals(true, catBlogs.getShareButton().isDisplayed());
+			Assert.assertEquals(true, catBlogs.getCoinsLogo().isDisplayed());
+			Assert.assertEquals(true, catBlogs.getPointsText().isDisplayed());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	@Test
+	public void TC_Wl_02_validateCategoryTest() throws InterruptedException {
+
+		HomePage homePage = new HomePage(driver);
+		Thread.sleep(2000);
+		Assert.assertEquals(true, homePage.getHomeTab().isDisplayed());
+		homePage.getHomeTab().click();
+
+		homePage.getBeautyTextview().click();
+		Thread.sleep(2000);
+
+		boolean actResult = driver.findElement(AppiumBy.xpath(
+				"//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[2]/android.view.View[2]"))
+				.isDisplayed();
+		Assert.assertEquals(true, actResult);
+
+		SelectedCategoryBlogs catBlogs = new SelectedCategoryBlogs(driver);
+
+		Assert.assertEquals(true, catBlogs.getBlogLogo().isDisplayed());
+		Assert.assertEquals(true, catBlogs.getWolooText().isDisplayed());
+		Assert.assertEquals(true, catBlogs.getShopnowButton().isDisplayed());
+		Assert.assertEquals(true, catBlogs.getLikeButton().isDisplayed());
+		Assert.assertEquals(true, catBlogs.getCommentsButton().isDisplayed());
+		Assert.assertEquals(true, catBlogs.getShareButton().isDisplayed());
+		Assert.assertEquals(true, catBlogs.getCoinsLogo().isDisplayed());
+		Assert.assertEquals(true, catBlogs.getPointsText().isDisplayed());
+	}
+
+	@Test
+	public void TC_Wl_03_validateBlogCommentsTest() throws InterruptedException {
+		HomePage homePage = new HomePage(driver);
+		Thread.sleep(2000);
+		Assert.assertEquals(true, homePage.getHomeTab().isDisplayed());
+		homePage.getHomeTab().click();
+
+		homePage.getBeautyTextview().click();
+		Thread.sleep(2000);
+
+		boolean actResult = driver.findElement(AppiumBy.xpath(
+				"//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[2]/android.view.View[2]"))
+				.isDisplayed();
+		Assert.assertEquals(true, actResult);
+
+		SelectedCategoryBlogs catBlogs = new SelectedCategoryBlogs(driver);
+		catBlogs.getLikeButton().click();
+
+		catBlogs.getCommentsButton().click();
+
+		CommentsPopup comPopup = new CommentsPopup(driver);
+		comPopup.getReviewButton().click();
+
+		CommentTextAreaPopup comText = new CommentTextAreaPopup(driver);
+		String message = "Good Product";
+		comText.getCommentsTextArea().sendKeys(message);
+		comText.getSubmitButton().click();
+
+		driver.navigate().back();// only for android
+		Thread.sleep(1000);
+
+		catBlogs.getCommentsButton().click();
+		String name = "david94";
+		try {
+			String actName = driver.findElement(AppiumBy.id("in.woloo.www:id/user_name")).getText();
+			if (actName.trim().equals(name)) {
+				String actMessage = driver.findElement(AppiumBy.id("in.woloo.www:id/product_price")).getText();
+
+				Assert.assertEquals(actMessage, message);
+			}
+		} catch (Exception e) {
+			System.out.println(" Text is not present");
+		}
+
+	}
+	
+	@Test
+	public void TC_Wl_04_validateShareFunctionalityTest() throws InterruptedException
+	{
+		HomePage homePage = new HomePage(driver);
+		Thread.sleep(2000);
+		Assert.assertEquals(true, homePage.getHomeTab().isDisplayed());
+		homePage.getHomeTab().click();
+
+		homePage.getBeautyTextview().click();
+		Thread.sleep(2000);
+
+		boolean actResult = driver.findElement(AppiumBy.xpath(
+				"//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[2]/android.view.View[2]"))
+				.isDisplayed();
+		Assert.assertEquals(true, actResult);
+		
+		SelectedCategoryBlogs catBlogs = new SelectedCategoryBlogs(driver);
+		
+		catBlogs.getShareButton().click();
+		
+		Assert.assertEquals(true, driver.findElement(AppiumBy.accessibilityId("Copy")).isDisplayed());
+		
+		driver.navigate().back();// only for android
+		
+	}
+	
+	@Test
+	public void TC_Wl_04_validateShopNowFunctionalityTest() throws InterruptedException
+	{
+		HomePage homePage = new HomePage(driver);
+		Thread.sleep(2000);
+		Assert.assertEquals(true, homePage.getHomeTab().isDisplayed());
+		homePage.getHomeTab().click();
+
+		homePage.getBeautyTextview().click();
+		Thread.sleep(2000);
+
+		boolean actResult = driver.findElement(AppiumBy.xpath(
+				"//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[2]/android.view.View[2]"))
+				.isDisplayed();
+		Assert.assertEquals(true, actResult);
+		
+		SelectedCategoryBlogs catBlogs = new SelectedCategoryBlogs(driver);
+		catBlogs.getShopnowButton().click();
+		
+		boolean actual=driver.findElement(AppiumBy.id("in.woloo.www:id/add_cart_view")).isDisplayed();
+		Assert.assertEquals(true, actual);
+	}
+}

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-04T23:04:34 IST" name="Default suite" finished-at="2025-06-04T23:06:25 IST" duration-ms="110880">
+  <suite started-at="2025-06-07T16:43:18 IST" name="Default suite" finished-at="2025-06-07T16:48:08 IST" duration-ms="290394">
     <groups>
     </groups>
-    <test started-at="2025-06-04T23:04:34 IST" name="Default test" finished-at="2025-06-04T23:06:25 IST" duration-ms="110880">
-      <class name="com_powderRoom_LoginTest.UserLoginTest">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:04:32 IST" name="loadConfig" finished-at="2025-06-04T23:04:34 IST" duration-ms="2501" status="PASS">
+    <test started-at="2025-06-07T16:43:18 IST" name="Default test" finished-at="2025-06-07T16:48:08 IST" duration-ms="290394">
+      <class name="com_powderRoom_BlogTest.BlogsTest">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:43:15 IST" name="loadConfig" finished-at="2025-06-07T16:43:18 IST" duration-ms="2869" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:04:34 IST" name="setup" finished-at="2025-06-04T23:04:47 IST" duration-ms="12079" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:43:18 IST" name="setup" finished-at="2025-06-07T16:43:47 IST" duration-ms="28810" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,153 +22,111 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:04:47 IST" name="launchApp" finished-at="2025-06-04T23:04:47 IST" duration-ms="297" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:43:47 IST" name="launchApp" finished-at="2025-06-07T16:43:47 IST" duration-ms="561" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="welcomeScreenTest()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:04:47 IST" name="welcomeScreenTest" finished-at="2025-06-04T23:04:49 IST" duration-ms="1975" status="PASS">
+        <test-method signature="TC_Wl_01_validateScrollBlogsTest()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:43:47 IST" name="TC_Wl_01_validateScrollBlogsTest" finished-at="2025-06-07T16:44:25 IST" duration-ms="37407" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- welcomeScreenTest -->
-        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:04:49 IST" name="closeApp" finished-at="2025-06-04T23:04:49 IST" duration-ms="571" status="PASS">
+        </test-method> <!-- TC_Wl_01_validateScrollBlogsTest -->
+        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:44:25 IST" name="closeApp" finished-at="2025-06-07T16:44:26 IST" duration-ms="1008" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:04:49 IST" name="launchApp" finished-at="2025-06-04T23:04:50 IST" duration-ms="508" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:44:26 IST" name="launchApp" finished-at="2025-06-07T16:44:26 IST" duration-ms="320" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="verifyLoginScreenDisplayTest()[pri:1, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:04:50 IST" name="verifyLoginScreenDisplayTest" finished-at="2025-06-04T23:04:59 IST" duration-ms="8882" status="PASS">
+        <test-method signature="TC_Wl_02_validateCategoryTest()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:44:26 IST" name="TC_Wl_02_validateCategoryTest" finished-at="2025-06-07T16:44:53 IST" duration-ms="27386" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLoginScreenDisplayTest -->
-        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:04:59 IST" name="closeApp" finished-at="2025-06-04T23:04:59 IST" duration-ms="617" status="PASS">
+        </test-method> <!-- TC_Wl_02_validateCategoryTest -->
+        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:44:53 IST" name="closeApp" finished-at="2025-06-07T16:44:54 IST" duration-ms="743" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:04:59 IST" name="launchApp" finished-at="2025-06-04T23:05:00 IST" duration-ms="441" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:44:54 IST" name="launchApp" finished-at="2025-06-07T16:44:54 IST" duration-ms="276" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="verifyOTPScreenDisplayTest()[pri:2, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:05:00 IST" name="verifyOTPScreenDisplayTest" finished-at="2025-06-04T23:05:12 IST" duration-ms="11862" status="PASS">
+        <test-method signature="TC_Wl_03_validateBlogCommentsTest()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:44:54 IST" name="TC_Wl_03_validateBlogCommentsTest" finished-at="2025-06-07T16:45:26 IST" duration-ms="31628" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyOTPScreenDisplayTest -->
-        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:05:12 IST" name="closeApp" finished-at="2025-06-04T23:05:12 IST" duration-ms="483" status="PASS">
+        </test-method> <!-- TC_Wl_03_validateBlogCommentsTest -->
+        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:45:26 IST" name="closeApp" finished-at="2025-06-07T16:45:27 IST" duration-ms="837" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:05:12 IST" name="launchApp" finished-at="2025-06-04T23:05:13 IST" duration-ms="318" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:45:27 IST" name="launchApp" finished-at="2025-06-07T16:45:27 IST" duration-ms="289" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="emptyMobileNoValidationTest()[pri:3, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:05:13 IST" name="emptyMobileNoValidationTest" finished-at="2025-06-04T23:05:22 IST" duration-ms="9747" status="PASS">
+        <test-method signature="TC_Wl_04_validateShareFunctionalityTest()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:45:27 IST" name="TC_Wl_04_validateShareFunctionalityTest" finished-at="2025-06-07T16:45:55 IST" duration-ms="27849" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- emptyMobileNoValidationTest -->
-        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:05:22 IST" name="closeApp" finished-at="2025-06-04T23:05:23 IST" duration-ms="490" status="PASS">
+        </test-method> <!-- TC_Wl_04_validateShareFunctionalityTest -->
+        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:45:55 IST" name="closeApp" finished-at="2025-06-07T16:45:56 IST" duration-ms="778" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:05:23 IST" name="launchApp" finished-at="2025-06-04T23:05:23 IST" duration-ms="314" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:45:56 IST" name="launchApp" finished-at="2025-06-07T16:45:56 IST" duration-ms="295" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="invalidMobileNoValidationTest()[pri:4, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:05:23 IST" name="invalidMobileNoValidationTest" finished-at="2025-06-04T23:05:33 IST" duration-ms="10365" status="PASS">
+        <test-method signature="TC_Wl_05_validateShopNowFunctionalityTest()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:45:56 IST" name="TC_Wl_05_validateShopNowFunctionalityTest" finished-at="2025-06-07T16:46:22 IST" duration-ms="25967" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- invalidMobileNoValidationTest -->
-        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:05:33 IST" name="closeApp" finished-at="2025-06-04T23:05:34 IST" duration-ms="564" status="PASS">
+        </test-method> <!-- TC_Wl_05_validateShopNowFunctionalityTest -->
+        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:46:22 IST" name="closeApp" finished-at="2025-06-07T16:46:23 IST" duration-ms="790" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:05:34 IST" name="launchApp" finished-at="2025-06-04T23:05:34 IST" duration-ms="290" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:46:23 IST" name="launchApp" finished-at="2025-06-07T16:46:23 IST" duration-ms="323" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="emptyOTPVaildationTest()[pri:5, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:05:34 IST" name="emptyOTPVaildationTest" finished-at="2025-06-04T23:05:47 IST" duration-ms="12677" status="PASS">
+        <test-method signature="TC_Wl_06_validateWolooPointsPopupTest()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:46:23 IST" name="TC_Wl_06_validateWolooPointsPopupTest" finished-at="2025-06-07T16:46:50 IST" duration-ms="26380" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- emptyOTPVaildationTest -->
-        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:05:47 IST" name="closeApp" finished-at="2025-06-04T23:05:47 IST" duration-ms="459" status="PASS">
+        </test-method> <!-- TC_Wl_06_validateWolooPointsPopupTest -->
+        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:46:50 IST" name="closeApp" finished-at="2025-06-07T16:46:50 IST" duration-ms="799" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:05:47 IST" name="launchApp" finished-at="2025-06-04T23:05:48 IST" duration-ms="408" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:46:50 IST" name="launchApp" finished-at="2025-06-07T16:46:51 IST" duration-ms="280" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="inValidOTPVaildationTest()[pri:6, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:05:48 IST" name="inValidOTPVaildationTest" finished-at="2025-06-04T23:06:03 IST" duration-ms="14908" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Please enter valid otp] but found [Something went wrong, try again]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Please enter valid otp] but found [Something went wrong, try again]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at org.testng.Assert.assertEquals(Assert.java:666)
-at com_powderRoom_LoginTest.UserLoginTest.inValidOTPVaildationTest(UserLoginTest.java:135)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="TC_Wl_07_validateWolooPointsPopupUIFunctionalityTest()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:46:51 IST" name="TC_Wl_07_validateWolooPointsPopupUIFunctionalityTest" finished-at="2025-06-07T16:47:27 IST" duration-ms="36324" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- inValidOTPVaildationTest -->
-        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:06:03 IST" name="closeApp" finished-at="2025-06-04T23:06:04 IST" duration-ms="333" status="PASS">
+        </test-method> <!-- TC_Wl_07_validateWolooPointsPopupUIFunctionalityTest -->
+        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:47:27 IST" name="closeApp" finished-at="2025-06-07T16:47:28 IST" duration-ms="1289" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:06:04 IST" name="launchApp" finished-at="2025-06-04T23:06:04 IST" duration-ms="161" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:47:28 IST" name="launchApp" finished-at="2025-06-07T16:47:29 IST" duration-ms="333" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="validOTPVaildationTest()[pri:7, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:06:04 IST" name="validOTPVaildationTest" finished-at="2025-06-04T23:06:24 IST" duration-ms="20230" status="PASS">
+        <test-method signature="TC_Wl_08_validateBlogsDetailScreenUITest()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:47:29 IST" name="TC_Wl_08_validateBlogsDetailScreenUITest" finished-at="2025-06-07T16:48:06 IST" duration-ms="37162" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validOTPVaildationTest -->
-        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:06:24 IST" name="closeApp" finished-at="2025-06-04T23:06:24 IST" duration-ms="488" status="PASS">
+        </test-method> <!-- TC_Wl_08_validateBlogsDetailScreenUITest -->
+        <test-method is-config="true" signature="closeApp()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:48:06 IST" name="closeApp" finished-at="2025-06-07T16:48:07 IST" duration-ms="800" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:06:24 IST" name="tearDown" finished-at="2025-06-04T23:06:25 IST" duration-ms="889" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:48:07 IST" name="tearDown" finished-at="2025-06-07T16:48:08 IST" duration-ms="1706" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="stopServer()[pri:0, instance:com_powderRoom_LoginTest.UserLoginTest@67f639d3]" started-at="2025-06-04T23:06:25 IST" name="stopServer" finished-at="2025-06-04T23:06:25 IST" duration-ms="56" status="PASS">
+        <test-method is-config="true" signature="stopServer()[pri:0, instance:com_powderRoom_BlogTest.BlogsTest@67f639d3]" started-at="2025-06-07T16:48:08 IST" name="stopServer" finished-at="2025-06-07T16:48:08 IST" duration-ms="61" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopServer -->
-      </class> <!-- com_powderRoom_LoginTest.UserLoginTest -->
+      </class> <!-- com_powderRoom_BlogTest.BlogsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

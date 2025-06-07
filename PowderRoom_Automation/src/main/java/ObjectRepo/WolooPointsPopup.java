@@ -2,6 +2,7 @@ package ObjectRepo;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -24,6 +25,9 @@ public class WolooPointsPopup {
 	@AndroidFindBy(id = "in.woloo.www:id/tv_go_back_to_home")
 	private WebElement goBackButton;
 
+	@AndroidFindBy(id = "in.woloo.www:id/ivLogo")
+	private WebElement coinsLogo;
+
 	public WebElement getWolooPointsTextview() {
 		return wolooPointsTextview;
 	}
@@ -34,6 +38,17 @@ public class WolooPointsPopup {
 
 	public WebElement getGoBackButton() {
 		return goBackButton;
+	}
+
+	public WebElement getCoinsLogo() {
+		return coinsLogo;
+	}
+
+	public void wolooPopupUI() {
+		Assert.assertEquals(true, wolooPointsTextview.isDisplayed());
+		Assert.assertEquals(true, coinsLogo.isDisplayed());
+		Assert.assertEquals(true, shopNowButton.isDisplayed());
+		Assert.assertEquals(true, goBackButton.isDisplayed());
 	}
 
 }

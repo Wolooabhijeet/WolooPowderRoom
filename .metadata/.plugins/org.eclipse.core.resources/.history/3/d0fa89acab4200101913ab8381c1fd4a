@@ -1,0 +1,41 @@
+package com_powderRoom_LoginTest;
+
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import ObjectRepo.HomePage;
+import ObjectRepo.LoginPage;
+import ObjectRepo.OTPPage;
+import ObjectRepo.WelcomePage;
+import Utilities.BaseClass;
+import Utilities.ExcelDataProvider;
+import Utilities.ListenerImpUtility;
+
+@Listeners(ListenerImpUtility.class)
+public class BlogsTest extends BaseClass {
+	@Test(dataProvider = "excelData", dataProviderClass = ExcelDataProvider.class)
+	public void validateCategory(String categoryName) throws InterruptedException {
+		WelcomePage welcomePage = new WelcomePage(driver);
+		welcomePage.getNextButton().click();
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.getMobileNumTextfield().sendKeys("9626409660");
+		loginPage.getOtpButton().click();
+
+		OTPPage otpPage = new OTPPage(driver);
+		otpPage.getOtpTextfield1().sendKeys("1");
+		otpPage.getOtpTextfield2().sendKeys("2");
+		otpPage.getOtpTextfield3().sendKeys("3");
+		otpPage.getOtpTextfield4().sendKeys("4");
+		otpPage.getSubmitButton().click();
+
+		HomePage homePage = new HomePage(driver);
+		Thread.sleep(2000);
+		Assert.assertEquals(true, homePage.getHomeTab().isDisplayed());
+
+		homePage.getBeautyTextview().isDisplayed();
+
+	}
+
+}

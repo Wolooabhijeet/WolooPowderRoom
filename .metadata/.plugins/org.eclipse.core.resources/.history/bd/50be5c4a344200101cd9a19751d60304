@@ -1,0 +1,18 @@
+package snippet;
+
+public class Snippet {
+	@Test(dataProvider = "excelData", dataProviderClass = ExcelDataProvider.class)
+	    public void validateCategory(String categoryName) {
+	        HomePage homePage = new HomePage(driver);
+	        BlogPage blogPage = new BlogPage(driver);
+	
+	        if (homePage.selectCategory(categoryName)) {
+	            blogPage.performBlogActions();
+	            System.out.println("✅ Completed: " + categoryName);
+	        } else {
+	            System.out.println("❌ Not Found: " + categoryName);
+	        }
+	    }
+	}
+}
+

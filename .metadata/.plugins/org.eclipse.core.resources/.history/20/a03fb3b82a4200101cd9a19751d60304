@@ -1,0 +1,87 @@
+package Utilities;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+public class ExcelUtility {
+
+	public String readDataFromExcel(String sheetName, int rowNum, int cellNum)
+			throws EncryptedDocumentException, IOException {
+
+		FileInputStream fisE = new FileInputStream("./src/test/resources/TestData.xlsx");
+
+		Workbook wb = WorkbookFactory.create(fisE);
+		Sheet sh = wb.getSheet(sheetName);
+		Row row = sh.getRow(rowNum);
+		String cell = row.getCell(cellNum).getStringCellValue();
+
+		return cell;
+	}
+
+	public void writeDataToExcel(String sheetName, int rowNum, int cellNum, String data)
+			throws EncryptedDocumentException, IOException {
+
+		FileInputStream fisE = new FileInputStream("./src/test/resources/TestData.xlsx");
+
+		Workbook wb = WorkbookFactory.create(fisE);
+		Sheet sh = wb.getSheet(sheetName);
+		Row row = sh.getRow(rowNum);
+		row.createCell(cellNum, CellType.STRING).setCellValue(data);
+
+		FileOutputStream fos = new FileOutputStream("./src/test/resources/TestData.xlsx");
+		wb.write(fos);
+		wb.close();
+
+	}
+
+	public static Object[][] readExcelAsDataProvider(String filePath, String sheetName) {
+		Object[][] data = null;
+		try (FileInputStream fis = new FileInputStream(filePath); Workbook workbook = WorkbookFactory.create(fis)) {
+
+			Sheet sheet = workbook.getSheet(sheetName);
+			int rowCount = sheet.getPhysicalNumberOfRows();
+			int colCount = sheet.getRow(0).getPhysicalNumberOfCells();
+
+			data = new Object[rowCount - 1][colCount]; // Skipping header
+
+			for (int i = 1; i < rowCount; i++) { // Start from 1 (skip header)
+				Row row = sheet.getRow(i);
+				for (int j = 0; j < colCount; j++) {
+					Cell cell = row.getCell(j);
+					data[i - 1][j] = getCellValue(cell);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return data;
+	}
+
+	private static Object getCellValue(Cell cell) {
+		if (cell == null)
+			return "";
+
+		switch (cell.getCellType()) {
+		case STRING:
+			return cell.getStringCellValue();
+		case NUMERIC:
+			return cell.getNumericCellValue();
+		case BOOLEAN:
+			return cell.getBooleanCellValue();
+		default:
+			return "";
+
+		}
+	}
+}

@@ -1,7 +1,9 @@
 package com_powderRoom_LoginTest;
 
+import java.io.IOException;
 import java.time.Duration;
 
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,17 +23,18 @@ import io.appium.java_client.AppiumBy;
 @Listeners(ListenerImpUtility.class)
 public class UserLoginTest extends BaseClass {
 
-	@Test(priority = 0)
-	public void welcomeScreenTest() {
+	@Test
+	public void TC_Wl_01_welcomeScreenTest() {
 		WelcomePage welcomePage = new WelcomePage(driver);
 
 		Assert.assertEquals(true, welcomePage.getWolooText().isDisplayed());
 		Assert.assertEquals(true, welcomePage.getWolooLogo().isDisplayed());
 		Assert.assertEquals(true, welcomePage.getNextButton().isDisplayed());
+
 	}
 
-	@Test(priority = 1)
-	public void verifyLoginScreenDisplayTest() {
+	@Test
+	public void TC_Wl_02_verifyLoginScreenTest() {
 		WelcomePage welcomePage = new WelcomePage(driver);
 		welcomePage.getNextButton().click();
 
@@ -42,8 +45,8 @@ public class UserLoginTest extends BaseClass {
 		Assert.assertEquals(true, loginPage.getTermsLink().isDisplayed());
 	}
 
-	@Test(priority = 2)
-	public void verifyOTPScreenDisplayTest() {
+	@Test
+	public void TC_Wl_03_verifyOTPScreenDisplayTest() {
 		WelcomePage welcomePage = new WelcomePage(driver);
 		welcomePage.getNextButton().click();
 
@@ -62,8 +65,8 @@ public class UserLoginTest extends BaseClass {
 
 	}
 
-	@Test(priority = 3)
-	public void emptyMobileNoValidationTest() {
+	@Test
+	public void TC_Wl_04_emptyMobileNoValidationTest() {
 		WelcomePage welcomePage = new WelcomePage(driver);
 		welcomePage.getNextButton().click();
 
@@ -75,8 +78,8 @@ public class UserLoginTest extends BaseClass {
 
 	}
 
-	@Test(priority = 4)
-	public void invalidMobileNoValidationTest() {
+	@Test
+	public void TC_Wl_05_invalidMobileNoValidationTest() {
 		WelcomePage welcomePage = new WelcomePage(driver);
 		welcomePage.getNextButton().click();
 
@@ -90,8 +93,8 @@ public class UserLoginTest extends BaseClass {
 		Assert.assertEquals(true, mobileNoErrorPopup.getCloseButton().isDisplayed());
 	}
 
-	@Test(priority = 5)
-	public void emptyOTPVaildationTest() {
+	@Test
+	public void TC_Wl_06_emptyOTPVaildationTest() {
 		WelcomePage welcomePage = new WelcomePage(driver);
 		welcomePage.getNextButton().click();
 
@@ -111,8 +114,8 @@ public class UserLoginTest extends BaseClass {
 
 	}
 
-	@Test(priority = 6)
-	public void inValidOTPVaildationTest() {
+	@Test
+	public void TC_Wl_07_inValidOTPVaildationTest() {
 		WelcomePage welcomePage = new WelcomePage(driver);
 		welcomePage.getNextButton().click();
 
@@ -135,14 +138,41 @@ public class UserLoginTest extends BaseClass {
 		Assert.assertEquals(toastMessage.getText(), "Please enter valid otp");
 
 	}
-	
-	@Test(priority = 7)
-	public void validOTPVaildationTest() throws InterruptedException {
+
+	@Test
+	public void TC_Wl_08_OTPClearFunctionalityTest() throws InterruptedException {
 		WelcomePage welcomePage = new WelcomePage(driver);
 		welcomePage.getNextButton().click();
 
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.getMobileNumTextfield().sendKeys("9090909091");
+		loginPage.getMobileNumTextfield().sendKeys("9626409660");
+		loginPage.getOtpButton().click();
+
+		OTPPage otpPage = new OTPPage(driver);
+		otpPage.getOtpTextfield1().sendKeys("1");
+		otpPage.getOtpTextfield2().sendKeys("2");
+		otpPage.getOtpTextfield3().sendKeys("3");
+		otpPage.getOtpTextfield3().sendKeys("4");
+
+		otpPage.getOtpTextfield4().clear();
+		otpPage.getSubmitButton().click();
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement toastMessage = wait
+				.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.xpath("//android.widget.Toast")));
+		System.out.println("Toast Message: " + toastMessage.getText());
+
+		// Assert.assertEquals(toastMessage.getText(), "Please enter valid otp");
+
+	}
+
+	@Test
+	public void TC_Wl_09_validOTPVaildationTest() throws EncryptedDocumentException, IOException, InterruptedException {
+		WelcomePage welcomePage = new WelcomePage(driver);
+		welcomePage.getNextButton().click();
+
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.getMobileNumTextfield().sendKeys("9626409660");
 		loginPage.getOtpButton().click();
 
 		OTPPage otpPage = new OTPPage(driver);
@@ -152,8 +182,9 @@ public class UserLoginTest extends BaseClass {
 		otpPage.getOtpTextfield4().sendKeys("4");
 		otpPage.getSubmitButton().click();
 
-		HomePage homePage=new HomePage(driver);
+		HomePage homePage = new HomePage(driver);
+		Thread.sleep(2000);
 		Assert.assertEquals(true, homePage.getHomeTab().isDisplayed());
-		
+
 	}
 }

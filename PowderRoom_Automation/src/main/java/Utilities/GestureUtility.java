@@ -85,7 +85,7 @@ public class GestureUtility {
 	public void scrollOnElement(WebElement element, String direction) {
 		try {
 			((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of("elementId",
-					((RemoteWebElement) element).getId(), "direction", direction, "percent", 1));
+					((RemoteWebElement) element).getId(), "direction", direction, "percent", 0.4));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

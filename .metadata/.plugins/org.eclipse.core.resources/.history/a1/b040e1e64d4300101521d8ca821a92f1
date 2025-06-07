@@ -1,0 +1,58 @@
+package ObjectRepo;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.PageFactory;
+
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+
+public class Sample1Page {
+	public AppiumDriver driver;
+
+	// Constructor
+	public Sample1Page(AppiumDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	}
+
+	// Category items container locator (update with correct ID or XPath)
+	private String categoryItemId = "//androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[2]/android.view.View[1]"; // Replace
+																																				// with
+																																				// actual
+																																				// resource-id
+
+	public boolean selectCategory(String categoryName) {
+		for (int i = 0; i < 5; i++) { // limit scroll attempts
+			List<WebElement> categories = driver.findElements(AppiumBy.xpath(categoryItemId));
+
+			for (WebElement cat : categories) {
+				if (cat.getText().equalsIgnoreCase(categoryName)) {
+					cat.click();
+					return true;
+				}
+			}
+
+			// Scroll container to right
+			if (!categories.isEmpty()) {
+				swipeLeft(categories.get(0));
+			}
+		}
+		return false;
+	}
+
+	private void swipeLeft(WebElement element) {
+		Map<String, Object> params = new HashMap<>();
+		params.put("elementId", ((RemoteWebElement) element).getId());
+		params.put("direction", "left");
+		params.put("percent", 0.8); // Adjust if needed
+		((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", params);
+	}
+
+}

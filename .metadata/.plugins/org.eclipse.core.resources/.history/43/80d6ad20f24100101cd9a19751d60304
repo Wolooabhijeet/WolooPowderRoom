@@ -1,0 +1,63 @@
+package Utilities;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+public class ExcelUtility {
+
+	public String readDataFromExcel(String sheetName, int rowNum, int cellNum)
+			throws EncryptedDocumentException, IOException {
+
+		FileInputStream fisE = new FileInputStream("./src/test/resources/TestData.xlsx");
+
+		Workbook wb = WorkbookFactory.create(fisE);
+		Sheet sh = wb.getSheet(sheetName);
+		Row row = sh.getRow(rowNum);
+		String cell = row.getCell(cellNum).getStringCellValue();
+
+		return cell;
+	}
+
+	public void writeDataToExcel(String sheetName, int rowNum, int cellNum, String data)
+			throws EncryptedDocumentException, IOException {
+
+		FileInputStream fisE = new FileInputStream("./src/test/resources/TestData.xlsx");
+
+		Workbook wb = WorkbookFactory.create(fisE);
+		Sheet sh = wb.getSheet(sheetName);
+		Row row = sh.getRow(rowNum);
+		row.createCell(cellNum, CellType.STRING).setCellValue(data);
+
+		FileOutputStream fos = new FileOutputStream("./src/test/resources/TestData.xlsx");
+		wb.write(fos);
+		wb.close();
+
+	}
+	public static List<String> getCategoryList(String filePath, String sheetName) throws EncryptedDocumentException, IOException {
+        List<String> categories = new ArrayList<String> ();
+        FileInputStream fisE = new FileInputStream(filePath);
+
+		Workbook wb = WorkbookFactory.create(fisE);
+		
+        try  {
+            Sheet sheet = wb.getSheet(sheetName);
+            for (Row row : sheet) {
+                categories.add(row.getCell(0).getStringCellValue());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return categories;
+    }
+
+}

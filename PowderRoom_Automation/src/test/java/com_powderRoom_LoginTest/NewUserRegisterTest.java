@@ -19,7 +19,7 @@ public class NewUserRegisterTest extends BaseClass {
 		welcomePage.getNextButton().click();
 
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.getMobileNumTextfield().sendKeys("9090909090");
+		loginPage.getMobileNumTextfield().sendKeys("9511233888");
 		loginPage.getOtpButton().click();
 
 		OTPPage otpPage = new OTPPage(driver);
@@ -35,13 +35,29 @@ public class NewUserRegisterTest extends BaseClass {
 		Assert.assertEquals(true,consentPage.getDenyButton().isDisplayed());
 		Assert.assertEquals(true,consentPage.getAcceptButton().isDisplayed());
 		
+		consentPage.getDenyButton().click();
+		
 		RegisterationPage registerPage=new RegisterationPage(driver);
+		
+		Assert.assertEquals(true,registerPage.getNameTextfield().isDisplayed());
+		Assert.assertEquals(true,registerPage.getEmailTextfield().isDisplayed());
+		Assert.assertEquals(true,registerPage.getCityTextfield().isDisplayed());
+		Assert.assertEquals(true,registerPage.getPincodeTextfield().isDisplayed());
+		Assert.assertEquals(true,registerPage.getAddressTextfield().isDisplayed());
+		Assert.assertEquals(true,registerPage.getdOBTextfield().isDisplayed());
+		Assert.assertEquals(true,registerPage.getGenderTextfield().isDisplayed());
+		Assert.assertEquals(true,registerPage.getSubmitButton().isDisplayed());
+		
 		registerPage.getNameTextfield().sendKeys("woloo001");
 		registerPage.getEmailTextfield().sendKeys("wolooapp@gmail.com");
 		registerPage.getCityTextfield().sendKeys("Bengaluru, Karanataka, India");
 		registerPage.getPincodeTextfield().sendKeys("560023");
 		registerPage.getAddressTextfield().sendKeys("No 5o , 1st main road");
 		registerPage.getdOBTextfield().sendKeys("13 Jun 2025");
+		registerPage.getGenderTextfield().sendKeys("Male");
+		registerPage.getSubmitButton().click();
+		
+		
 		
 	}
 
