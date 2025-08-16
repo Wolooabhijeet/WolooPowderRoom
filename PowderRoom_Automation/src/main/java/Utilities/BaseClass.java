@@ -63,6 +63,7 @@ public class BaseClass {
 			androidOptions.setApp(property.getProperty("android.app.path"));
 			androidOptions.setAutomationName("UiAutomator2");
 			androidOptions.setAutoGrantPermissions(true);
+			androidOptions.setUdid("07589311BN040005");
 			options = androidOptions;
 			driver = new AndroidDriver(new URL(property.getProperty("appium.server.url")), options);
 			utility = new AndroidUtility(driver);

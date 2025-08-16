@@ -1,6 +1,7 @@
 package com_powderRoom_LoginTest;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import ObjectRepo.ConsentPage;
@@ -9,7 +10,9 @@ import ObjectRepo.OTPPage;
 import ObjectRepo.RegisterationPage;
 import ObjectRepo.WelcomePage;
 import Utilities.BaseClass;
+import Utilities.ListenerImpUtility;
 
+@Listeners(ListenerImpUtility.class)
 public class NewUserRegisterTest extends BaseClass {
 	
 	@Test
@@ -19,7 +22,7 @@ public class NewUserRegisterTest extends BaseClass {
 		welcomePage.getNextButton().click();
 
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.getMobileNumTextfield().sendKeys("9511233888");
+		loginPage.getMobileNumTextfield().sendKeys("8080707081");
 		loginPage.getOtpButton().click();
 
 		OTPPage otpPage = new OTPPage(driver);

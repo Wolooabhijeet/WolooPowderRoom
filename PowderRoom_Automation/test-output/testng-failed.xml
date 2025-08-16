@@ -5,13 +5,12 @@
     <classes>
       <class name="com_powderRoom_LoginTest.UserLoginTest">
         <methods>
+          <include name="TC_Wl_01_welcomeScreenTest"/>
           <include name="stopServer"/>
           <include name="loadConfig"/>
           <include name="closeApp"/>
           <include name="setup"/>
-          <include name="TC_Wl_07_inValidOTPVaildationTest"/>
           <include name="launchApp"/>
-          <include name="TC_Wl_08_OTPClearFunctionalityTest"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com_powderRoom_LoginTest.UserLoginTest -->
